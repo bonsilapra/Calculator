@@ -12,7 +12,7 @@ function addButtons () {
         let btn = document.createElement("button");
         btn.innerHTML = "<b>"+button.name+"</b>";
         btn.onclick = someFunc;
-        btn.classList.add(button.class);
+        btn.classList.add(button.class, "btn");
         document.getElementsByClassName(button.place)[0].appendChild(btn);
     }
 
@@ -73,10 +73,21 @@ function addButtons () {
             input = input + i;
             document.getElementsByClassName("calc-input")[0].value = input
         }
-        btn.classList.add("normal-btn")
+        btn.classList.add("normal-btn", "btn")
         document.getElementsByClassName("buttons-num")[0].appendChild(btn);
     }
 
     buttonSymbol.forEach(createButton);
+
+    let inputFiled =  document.getElementsByClassName("calc-input")[0]
+    inputFiled.addEventListener('input', updateValue)
+    function updateValue(e) {
+        input = e.target.value;
+    }
+    inputFiled.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            getResult();
+        }
+    })
 
 }

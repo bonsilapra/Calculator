@@ -20,7 +20,7 @@ h1 {
 
 
 .calc-container {
-    width: 400px;
+    width: 460px;
     height: 380px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
     border-radius: 20px;
@@ -71,12 +71,12 @@ h1 {
 .calc-buttons {
     display: flex;
     justify-content: space-between;
-    width: 400px;
+    width: 460px;
     margin-top: 20px;
 }
 .buttons-num,
 .buttons-other {
-    width: 200px;
+    width: 230px;
 }
 
 .buttons-num {
@@ -86,19 +86,21 @@ h1 {
     flex-wrap: wrap;
 }
 
-
-.normal-btn {
-    width: 55px;
+.btn {
     height: 40px;
     padding: 5px;
     margin: 5px;
-    font-size: large;
-    color: #334d4d;
-    background-color: rgba(51, 77, 77, 0.3);
+    font-size: larger;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
     cursor: pointer;
+}
+
+.normal-btn {
+    width: 65px;
+    color: #334d4d;
+    background-color: rgba(51, 77, 77, 0.3);
+    transition: background-color 0.2s ease-in-out;
 }
 
 .normal-btn:hover {
@@ -106,35 +108,35 @@ h1 {
 }
 
 .result-btn {
-    width: 120px;
-    height: 40px;
-    padding: 5px;
-    margin: 5px;
-    font-size: large;
-    color: #334d4d;
-    background-color: rgba(239, 245, 245, 0.9);
-    border: none;
-    border-radius: 5px;
+    width: 140px;
+    color: rgba(239, 245, 245, 0.9);
+    background-color:rgba(51, 77, 77, 0.7);
     transition: background-color 0.2s ease-in-out;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.result-btn:hover {
-    background-color: rgba(51, 77, 77, 0.7);
+.result-btn:after {
+    content: "";
+    width: 18px;
+    height: 150%;
+    position: absolute;
+    left: -60px;
+    top: 0;
+    background-color: rgba(239, 245, 245, 0.2);
+    transform: rotate(20deg) translateY(-10px);
+    transition: transform 0.4s;
+}
+
+.result-btn:hover:after {
+    transform: translateX(210px) rotate(20deg) translateY(-10px);
 }
 
 .clear-btn {
-    width: 120px;
-    height: 40px;
-    padding: 5px;
-    margin: 5px;
-    font-size: large;
-    color: #334d4d;
+    width: 140px;
+    color: rgb(145, 41, 41);
     background-color: rgba(241, 60, 60, 0.3);
-    border: none;
-    border-radius: 5px;
     transition: background-color 0.2s ease-in-out;
-    cursor: pointer;
 }
 
 .clear-btn:hover {
@@ -163,5 +165,4 @@ a {
 
 a:hover {
     color: rgba(51, 77, 77, 0.7);
-    text-shadow: 0 0 20px #334d4d;
 }
