@@ -15,6 +15,7 @@ function addButtons () {
         btn.classList.add(button.class);
         document.getElementsByClassName(button.place)[0].appendChild(btn);
     }
+
     function inputChangeFunction() {input = input + this.name};
 
     function inputClear() {
