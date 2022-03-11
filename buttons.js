@@ -80,10 +80,13 @@ function addButtons () {
     buttonSymbol.forEach(createButton);
 
     let inputFiled =  document.getElementsByClassName("calc-input")[0]
+    
     inputFiled.addEventListener('input', updateValue)
+    
     function updateValue(e) {
         input = e.target.value;
     }
+
     inputFiled.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             getResult();
